@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <!-- // Header  -->
+{% get_current_language as LANGUAGE_CODE %}
+
+
+
+    <div class="margin-tb-30px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mt-lg-5">
+                    <h1 class="mb-5 mt-lg-5" style="font-size:50px;">{% trans 'Qidiruv natijalari' %}</h1>
+                    <div class="row">
+                        {% if object_list %}
+                        {% for d in object_list %}
+                        <div class="col-lg-6 margin-bottom-40px">
+                            <div class="thum"><a href="{{d.get_dori}}"><img src="{{d.image.url}}" alt=""></a></div>
+                            <div class="padding-30px background-white">
+                                <i class="far fa-folder-open text-main-color"></i>
+                                <a href="{{d.category.get_absolute_url}}" class="text-main-color" style="font-size: 18px;">
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                {{d.category}} 
+                                {% else %}
+                                {{d.category.nameru}} 
+                                {% endif %}
+                            </a>
+                                <h1><a href="{{d.get_dori}}" class="d-block text-dark text-capitalize  margin-tb-15px">{% if LANGUAGE_CODE == 'uz' %}
+                                {{d.name}} {% else %} {{d.nameru}} {% endif %}</a></h1>
+                                <span class="text-extra-small" style="font-size:16px;"><i class="far fa-clock text-grey-2" ></i>{% trans 'Qoyildi : ' %}  <a href="{{d.get_dori}}" style="font-size:13px;">{{d.date}}</a></span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <br>
+                        <h1 class="pl-3" style="color:red;">{% trans 'Hech nima topilmadi' %}</h1>
+                        {% endif %}
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4 mt-lg-5">
+
+                    <div class="margin-bottom-30px mt-lg-5">
+                        <div class="padding-30px background-white border-radius-10">
+                            <h4><i class="fas fa-search margin-right-10px text-main-color"></i> {% trans 'Qidiruv' %}</h4>
+                            <hr>
+                            <form action="{% url 'info:search_result' %}" method="get">
+                            <div class="input-group mb-3">
+                              <input type="text" placeholder="{% trans 'Dori nomi..' %}" class="form-control border-radius-0" name="q">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary text-white background-main-color border-radius-0" type="submit">{% trans 'Izlash' %}</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_categories">
+                        <div class="margin-bottom-30px">
+                            <div class="padding-30px background-white border-radius-10">
+                                <h4><i class="far fa-folder-open margin-right-10px text-main-color"></i> {% trans 'Kategoriyalar' %}</h4>
+                                <hr>
+                                <ul>
+                                    {% for c in cat %}
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.name}}</a></li>
+                                    {% else %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.nameru}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

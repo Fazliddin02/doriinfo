@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-16 20:05+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\dori\settings.py:174
+msgid "Uzbek"
+msgstr ""
+
+#: .\dori\settings.py:175
+msgid "Russian"
+msgstr ""
+
+#: .\templates\base.html:7 .\templates\base.html:116
+msgid "Dori - Dorilar haqida barcha ma'lumot"
+msgstr ""
+
+#: .\templates\base.html:59
+msgid "Bosh sahifa"
+msgstr ""
+
+#: .\templates\base.html:62 .\templates\categories_list.html:18
+#: .\templates\index.html:63
+msgid "Dorilar"
+msgstr ""
+
+#: .\templates\base.html:116
+msgid "Barcha huquqlar himoyalangan"
+msgstr ""
+
+#: .\templates\blog-grid.html:30 .\templates\categories_list.html:36
+#: .\templates\list.html:31
+msgid "Qoyildi : "
+msgstr ""
+
+#: .\templates\blog-grid.html:39 .\templates\categories_list.html:49
+msgid "Oldingi"
+msgstr ""
+
+#: .\templates\blog-grid.html:44 .\templates\categories_list.html:54
+msgid "sahifa,"
+msgstr ""
+
+#: .\templates\blog-grid.html:44 .\templates\categories_list.html:54
+msgid "dan."
+msgstr ""
+
+#: .\templates\blog-grid.html:49 .\templates\categories_list.html:59
+msgid "Keyingi"
+msgstr ""
+
+#: .\templates\blog-grid.html:60 .\templates\categories_list.html:70
+#: .\templates\list.html:47
+msgid "Qidiruv"
+msgstr ""
+
+#: .\templates\blog-grid.html:64 .\templates\blog-single.html:133
+#: .\templates\categories_list.html:74 .\templates\list.html:51
+msgid "Dori nomi.."
+msgstr ""
+
+#: .\templates\blog-grid.html:66 .\templates\blog-single.html:135
+#: .\templates\categories_list.html:76 .\templates\index.html:23
+#: .\templates\list.html:53
+msgid "Izlash"
+msgstr ""
+
+#: .\templates\blog-grid.html:77 .\templates\blog-single.html:145
+#: .\templates\categories_list.html:86 .\templates\list.html:63
+msgid "Kategoriyalar"
+msgstr ""
+
+#: .\templates\blog-single.html:26
+msgid "Qoyilgan :"
+msgstr ""
+
+#: .\templates\blog-single.html:77
+msgid "Preparat savdo nomi:"
+msgstr ""
+
+#: .\templates\blog-single.html:79
+msgid "Ta'sir etuvchi moddalar:"
+msgstr ""
+
+#: .\templates\blog-single.html:81
+msgid "Dori shakli"
+msgstr ""
+
+#: .\templates\blog-single.html:83
+msgid "Tarikibi"
+msgstr ""
+
+#: .\templates\blog-single.html:85
+msgid "Farmakoterapeftik guruhi:"
+msgstr ""
+
+#: .\templates\blog-single.html:87
+msgid "Kod ATX:"
+msgstr ""
+
+#: .\templates\blog-single.html:89
+msgid "Farmakalogik xususiyati:"
+msgstr ""
+
+#: .\templates\blog-single.html:91
+msgid "Qo'llanilishi"
+msgstr ""
+
+#: .\templates\blog-single.html:93
+msgid "Nojo'ya ta'sirlari:"
+msgstr ""
+
+#: .\templates\blog-single.html:95
+msgid "Qo'llash mumkin bo'lmagan holatlar:"
+msgstr ""
+
+#: .\templates\blog-single.html:97
+msgid "Dorilarning o'zaro ta'siri:"
+msgstr ""
+
+#: .\templates\blog-single.html:99
+msgid "Maxsus ko'rsatmalar:"
+msgstr ""
+
+#: .\templates\blog-single.html:101
+msgid "Chiqarilish shakli:"
+msgstr ""
+
+#: .\templates\blog-single.html:103
+msgid "Saqlash sharoiti:"
+msgstr ""
+
+#: .\templates\blog-single.html:105
+msgid "Yaroqlilik muddati:"
+msgstr ""
+
+#: .\templates\blog-single.html:107
+msgid "Dorixonalarda berilish tartibi:"
+msgstr ""
+
+#: .\templates\blog-single.html:109
+msgid "Ishlab chiqaruvchi:"
+msgstr ""
+
+#: .\templates\blog-single.html:129
+msgid "Dori Izlash"
+msgstr ""
+
+#: .\templates\categories_list.html:42
+msgid "Hozircha bu katoriyaga oid dorilar yo'q"
+msgstr ""
+
+#: .\templates\index.html:10
+msgid "Dorilar haqidagi barcha ma'lumot"
+msgstr ""
+
+#: .\templates\index.html:18
+msgid "Dori nomi"
+msgstr ""
+
+#: .\templates\index.html:66
+msgid ""
+"Dorilar haqidagi barcha ma'lumotlar shu yerda, kerakli dorini ustiga bosib u "
+"haqidagi ma'lumotni bilib oling"
+msgstr ""
+
+#: .\templates\index.html:69
+msgid "Hamma dorilar"
+msgstr ""
+
+#: .\templates\list.html:14
+msgid "Qidiruv natijalari"
+msgstr ""
+
+#: .\templates\list.html:37
+msgid "Hech nima topilmadi"
+msgstr ""

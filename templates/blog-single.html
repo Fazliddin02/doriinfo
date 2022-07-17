@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <!-- // Header  -->
+{% get_current_language as LANGUAGE_CODE %}
+<div class="padding-tb-30px"></div>
+
+
+    <div class="margin-tb-30px">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8">
+                    <div class="border-radius-10 background-white  margin-bottom-35px padding-30px">
+                        <h1 ><i class="fas fa-file-alt margin-right-10px text-main-color" ></i>
+                            {% if LANGUAGE_CODE == 'uz' %}
+                            {{dori.name}}
+                            {%  else%}
+                            {{dori.nameru}}
+                            {% endif %}
+                        </h1>
+                        <hr>
+
+                        <div class="meta">
+                            <span class="margin-right-20px text-extra-small">{% trans 'Qoyilgan :' %} {{dori.date}}</span>
+                        </div>
+                        <hr>
+
+                        <div class="thumbnail margin-bottom-20px"><img src="{{dori.image.url}}" alt="">
+                        </div>
+                        
+                        {% if LANGUAGE_CODE == 'uz' %}
+                        <div class="entry-content">
+                            {% autoescape off %}
+                            <b><h2 >Preparat savdo nomi:</h3></b>
+                            <p style="font-family:'Poppins'; font-size: 16px">{{dori.name}}</p>
+                            <b><h3>Ta'sir etuvchi moddalar:</h3></b>
+                            <p style="font-family:'Poppins'; font-size: 16px">{{dori.affective_stuff}}</p>
+                            <b><h3>Dori shakli</h3></b>
+                            <p style="font-family:'Poppins';">{{dori.size_of_drug}}</p>
+                            <b><h3>Tarikibi</h3></b>
+                            <p>{{dori.ingredients}}</p>
+                            <b><h3>Farmakoterapeftik guruhi:</h3></b>
+                            <p style="font-family:'Poppins';">{{dori.what_can_drug_do}}</p>
+                            <b><h3>Kod ATX:</h3></b>
+                            <p style="font-family:'Poppins';">{{dori.code_atx}}</p>
+                            <b><h3>Farmakalogik xususiyati:</h3></b>
+                            <p style="font-family:'Poppins' !important;">{{dori.far_desc}}</p>
+                            <b><h3>Qo'llanilishi</h3></b>
+                            <p>{{dori.using}}</p>
+                            <b><h3>Nojo'ya ta'sirlari:</h3></b>
+                            <p>{{dori.bad_side}}</p>
+                            <b><h3>Qo'llash mumkin bo'lmagan holatlar:</h3></b>
+                            <p>{{dori.non_use}}</p>
+                            <b><h3>Dorilarning o'zaro ta'siri:</h3></b>
+                            <p>{{dori.react_drugs}}</p>
+                            <b><h3>Maxsus ko'rsatmalar:</h3></b>
+                            <p>{{dori.spec_direct}}</p>
+                            <b><h3>Chiqarilish shakli:</h3></b>
+                            <p>{{dori.prod_drug}}</p>
+                            <b><h3>Saqlash sharoiti:</h3></b>
+                            <p>{{dori.keep}}</p>
+                            <b><h3>Yaroqlilik muddati:</h3></b>
+                            <p>{{dori.shelf_life}}</p>
+                            <b><h3>Dorixonalarda berilish tartibi:</h3></b>
+                            <p>{{dori.give}}</p>
+                            <b><h3>Ishlab chiqaruvchi:</h3></b>
+                            <p>{{dori.producer}}</p>
+                            
+                            {% endautoescape %}
+                            
+                        </div>
+                        {%else%}
+                        <div class="entry-content">
+                            {% autoescape off %}
+                            <b><h5>{% trans 'Preparat savdo nomi:' %}</h5></b>
+                            <p style="font-size:16px; font-family:'Poppins';">{{dori.nameru}}</p>
+                            <b><h5>{% trans "Ta'sir etuvchi moddalar:" %}</h5></b>
+                            <p>{{dori.affective_stuffru}}</p>
+                            <b><h5>{% trans 'Dori shakli' %}</h5></b>
+                            <p>{{dori.size_of_drugru}}</p>
+                            <b><h5>{% trans 'Tarikibi' %}</h5></b>
+                            <p>{{dori.ingredientsru}}</p>
+                            <b><h5>{% trans 'Farmakoterapeftik guruhi:' %}</h5></b>
+                            <p>{{dori.what_can_drug_doru}}</p>
+                            <b><h5>{% trans 'Kod ATX:' %}</h5></b>
+                            <p>{{dori.code_atx}}</p>
+                            <b><h5>{% trans 'Farmakalogik xususiyati:' %}</h5></b>
+                            <p>{{dori.far_descru}}</p>
+                            <b><h5>{% trans "Qo'llanilishi" %}</h5></b>
+                            <p>{{dori.usingru}}</p>
+                            <b><h5>{% trans "Nojo'ya ta'sirlari:" %}</h5></b>
+                            <p>{{dori.bad_sideru}}</p>
+                            <b><h5>{% trans "Qo'llash mumkin bo'lmagan holatlar:" %}</h5></b>
+                            <p>{{dori.non_useru}}</p>
+                            <b><h5>{% trans "Dorilarning o'zaro ta'siri:" %}</h5></b>
+                            <p>{{dori.react_drugsru}}</p>
+                            <b><h5>{% trans "Maxsus ko'rsatmalar:" %}</h5></b>
+                            <p>{{dori.spec_directru}}</p>
+                            <b><h5>{% trans 'Chiqarilish shakli:' %}</h5></b>
+                            <p>{{dori.prod_drugru}}</p>
+                            <b><h5>{% trans 'Saqlash sharoiti:' %}</h5></b>
+                            <p>{{dori.keepru}}</p>
+                            <b><h5>{% trans 'Yaroqlilik muddati:' %}</h5></b>
+                            <p>{{dori.shelf_liferu}}</p>
+                            <b><h5>{% trans 'Dorixonalarda berilish tartibi:' %}</h5></b>
+                            <p>{{dori.giveru}}</p>
+                            <b><h5>{% trans 'Ishlab chiqaruvchi:' %}</h5></b>
+                            <p>{{dori.producerru}}</p>
+                            
+                            {% endautoescape %}
+                            
+                        </div>
+                        {% endif %}
+                        <!-- .entry-content -->
+
+                        <!-- Post tags -->
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="margin-bottom-30px mt-lg-5">
+                        <div class="padding-30px background-white border-radius-10">
+                            <h4><i class="fas fa-search margin-right-10px text-main-color"></i> {% trans 'Dori Izlash' %}</h4>
+                            <hr>
+                            <form action="{% url 'info:search_result' %}" method="get">
+                            <div class="input-group mb-3">
+                              <input type="text" placeholder="{% trans 'Dori nomi..' %}" class="form-control border-radius-0" name="q">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary text-white background-main-color border-radius-0" type="submit">{% trans 'Izlash' %}</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_categories">
+                        <div class="margin-bottom-30px">
+                            <div class="padding-30px background-white border-radius-10">
+                                <h4><i class="far fa-folder-open margin-right-10px text-main-color"></i> {% trans 'Kategoriyalar' %}</h4>
+                                <hr>
+                                <ul>
+                                    {% for c in cat %}
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.name}}</a></li>
+                                    {% else %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.nameru}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

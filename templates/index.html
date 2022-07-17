@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+    <section class="banner padding-tb-200px sm-ptb-80px background-overlay">
+        <div class="container z-index-2 position-relative">
+            <div class="title">
+                <h1 class="text-title-large text-main-color font-weight-300 margin-bottom-15px" style="font-size:650% ;">Dori Info</h1>
+                <h4 class="font-weight-300 text-main-color text-up-small" style="font-size:250% ;">{% trans "Dorilar haqidagi barcha ma'lumot" %}</h4>
+            </div>
+            <div class="row margin-tb-60px">
+                <div class="col-lg-8">
+                    <div class="listing-search">
+                        <form class="row no-gutters" method="get" action="{% url 'info:search_result' %}">
+                            <div class="col-md-9">
+                                <div class="keywords">
+                                    <input class="listing-form first" type="text" placeholder="{% trans 'Dori nomi' %}" value="" name="q" style="font-size:150% ;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <button class="listing-bottom background-second-color box-shadow" style="border-color: transparent; font-size: 150%;" >{% trans 'Izlash' %}
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        {% for cat in cat %}
+                        <div class="col-md-3 col-6 sm-mb-30px wow fadeInUp padding-tb-15px">
+                            <a href="{{cat.get_absolute_url}}" class="d-block border-radius-15 hvr-float hvr-sh2">
+                                <div class="background-main-color text-white border-radius-15 padding-20px text-center opacity-hover-10" style="font-size:150% ;">
+                                    <div class="icon margin-bottom-15px opacity-7 rounded">
+                                        <img src="{{cat.image.url}}" alt="" style="border-radius:10px;">
+                                    </div>
+                                    {{cat.name}}
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="padding-tb-100px background-grey-1">
+        <div class="container">
+            <!-- Title -->
+            <div class="row justify-content-center margin-bottom-45px">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-4 wow fadeInUp">
+                            <h1 class="text-second-color font-weight-300 text-sm-center text-lg-right margin-tb-15px" style="font-size:350%;">{% trans "Dorilar" %}</h1>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <p class="text-grey-2 margin-tb-10px" style="font-size:150%;">{% trans "Dorilar haqidagi barcha ma'lumotlar shu yerda, kerakli dorini ustiga bosib u haqidagi ma'lumotni bilib oling" %}</p>
+                        </div>
+                        <div class="col-md-2 wow fadeInUp" data-wow-delay="0.4s">
+                            <a href="{% url 'info:info' %}" class="text-main-color margin-tb-15px d-inline-block"><span class="d-block float-left margin-right-10px margin-top-5px" style="font-size:100%;">{% trans "Hamma dorilar" %}</span> <i class="far fa-arrow-alt-circle-right text-large margin-top-7px"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // Title -->
+
+            <div class="row">
+
+                <!-- Dori -->
+                {% for d in dori %}
+                <div class="col-lg-3 col-md-6 hvr-bob sm-mb-45px">
+                    <div class="background-white box-shadow wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="thum">
+                            <a href="{{d.get_dori}}"><img src="{{d.image.url}}" alt=""></a>
+                        </div>
+                        <div class="padding-30px">
+                            <h2 class="margin-tb-15px"><a class="text-dark" href="{{d.get_dori}}">{{d.name}}</a></h2>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- // Dori -->
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

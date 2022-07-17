@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <!-- // Header  -->
+{% get_current_language as LANGUAGE_CODE %}
+<div class="padding-tb-30px"></div>
+
+
+    <div class="margin-tb-30px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        {% for d in dori %}
+                        <div class="col-lg-6 margin-bottom-40px">
+                            <div class="thum"><a href="{{d.get_dori}}"><img src="{{d.image.url}}" alt=""></a></div>
+                            <div class="padding-30px background-white">
+                                <i class="far fa-folder-open text-main-color"></i>
+                                <a href="{{d.category.get_absolute_url}}" class="text-main-color" style="font-size: 18px;">
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                {{d.category.name}} 
+                                {% else %}
+                                {{d.category.nameru}} 
+                                {% endif %}
+                            </a>
+                                <h1><a href="{{d.get_dori}}" class="d-block text-dark text-capitalize  margin-tb-15px">
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                {{d.name}} {% else %} {{d.nameru}} {% endif %}</a></h1>
+                                <span class="text-extra-small" style="font-size:16px;"><i class="far fa-clock text-grey-2" ></i>{% trans 'Qoyildi : ' %}  <a href="{{d.get_dori}}" style="font-size:13px;">{{d.date}}</a></span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <ul class="pagination pagination-md ">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link rounded-0" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">{% trans 'Oldingi' %}</a></li>
+                        {% else %}
+                        {% endif %}
+                        {% if page_obj.number > 1 %}
+                        <li class="page-item">
+                            {{ page_obj.number }} - {% trans 'sahifa,' %}  {{ page_obj.paginator.num_pages }} {% trans 'dan.' %}'
+                        </li>
+                        {% else %}
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link rounded-0" href="?page={{ page_obj.next_page_number }}">{% trans 'Keyingi' %}</a></li>
+                        {% else %}
+                        
+                        {% endif %}
+                    </ul>
+
+                </div>
+                <div class="col-lg-4">
+
+                    <div class="margin-bottom-30px">
+                        <div class="padding-30px background-white border-radius-10">
+                            <h4><i class="fas fa-search margin-right-10px text-main-color"></i>{% trans 'Qidiruv' %}</h4>
+                            <hr>
+                            <form method="get" action="{% url 'info:search_result' %}">
+                            <div class="input-group mb-3">
+                              <input type="text" placeholder="{% trans 'Dori nomi..' %}" class="form-control border-radius-0" name="q">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary text-white background-main-color border-radius-0" type="submit">{% trans 'Izlash' %}</button>
+                                </div>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="widget widget_categories">
+                        <div class="margin-bottom-30px">
+                            <div class="padding-30px background-white border-radius-10">
+                                <h4><i class="far fa-folder-open margin-right-10px text-main-color"></i> {% trans 'Kategoriyalar' %}</h4>
+                                <hr>
+                                <ul>
+                                    {% for c in cat %}
+                                    {% if LANGUAGE_CODE == 'uz' %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.name}}</a></li>
+                                    {% else %}
+                                    <li><a href="{{c.get_absolute_url}}">{{c.nameru}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
